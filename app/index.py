@@ -1,5 +1,5 @@
-# Reshav Sharma-2025-TDS-PROJECT 1: tds_virtual_ta/index.py
-
+# TDS Virtual Assistant/ index.py 
+# Description: This module sets up the Flask API for the TDS Virtual Assistant, handling requests and responses.
 from flask import Flask, request, jsonify
 from rag import answer_question
 from dotenv import load_dotenv
@@ -9,8 +9,8 @@ app = Flask(__name__)
 load_dotenv()
 CORS(app)
 
-@app.route("/api", methods=["POST"])
-def api():
+@app.route("/", methods=["POST"])
+def handle_post():
     data = request.get_json()
     question = data.get("question")
     if not question:
@@ -19,9 +19,15 @@ def api():
     answer, links = answer_question(question)
     return jsonify({"answer": answer, "links": links})
 
+
+    answer, links = answer_question(question)
+    return jsonify({"answer": answer, "links": links})
+
 @app.route("/", methods=["GET"])
 def health_check():
     return jsonify({"message": "TDS Virtual TA API is running!"})
+
+
 
 if __name__ == "__main__":
     import os
