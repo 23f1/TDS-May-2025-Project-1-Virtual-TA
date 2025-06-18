@@ -9,8 +9,8 @@ app = Flask(__name__)
 load_dotenv()
 CORS(app)
 
-@app.route("/api", methods=["POST"])
-def api():
+@app.route("/", methods=["POST"])
+def handle_post():
     data = request.get_json()
     question = data.get("question")
     if not question:
@@ -20,8 +20,6 @@ def api():
     return jsonify({"answer": answer, "links": links})
 
 
-    answer, links = answer_question(question)
-    return jsonify({"answer": answer, "links": links})
 
 @app.route("/", methods=["GET"])
 def health_check():
