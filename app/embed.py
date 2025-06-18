@@ -1,4 +1,5 @@
-# Reshav Sharma-2025-TDS-PROJECT 1: tds_virtual_ta/embed.py
+# TDS Virtual Assistant/ embed.py
+# Description: This module handles the loading of precomputed embeddings and metadata for the TDS Virtual
 
 import numpy as np
 import json
