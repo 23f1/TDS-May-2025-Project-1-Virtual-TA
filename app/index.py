@@ -9,8 +9,8 @@ app = Flask(__name__)
 load_dotenv()
 CORS(app)
 
-@app.route("/", methods=["POST"])
-def handle_post():
+@app.route("/api", methods=["POST"])
+def api():
     data = request.get_json()
     question = data.get("question")
     if not question:
