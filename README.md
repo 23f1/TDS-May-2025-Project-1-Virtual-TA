@@ -4,12 +4,12 @@ This project implements a RAG-based virtual TA for the IITM TDS course, combinin
 
 ## Deployment
 
-- Built with Flask and OpenAI API (via AIProxy)
-- Hosted on Railway.com using `Dockerfile`
+- Built with Flask and Google Ai api
+- Hosted on Render
 
 ## Environment Variables
 
-- `AIPROXY_TOKEN` — required (set via Railway's Environment Variables UI)
+GEMINI_API_KEY ="your api key here"
 
 ## Endpoints
 
